@@ -24,6 +24,8 @@ function App() {
     "Implants",
     "Fillings"
   ];
+  const cosmetic = ["Invisalign", "Teeth Whitening", "Porcelain Veneers", "Cosmetic Bonding"];
+
   return (
     <Router>
       <div className="App">
@@ -37,7 +39,7 @@ function App() {
         </nav>
         <Route exact path="/" component={Home} />
         <Route path="/procedures" render={() => <Procedures procedures={procedures} />} />
-        <Route path="/cosmetic" component={Cosmetic} />
+        <Route path="/cosmetic" render={() => <Cosmetic cosmetic={cosmetic}/>} />
         <Route path="/contact" component={Contact} />
         <Route path="/doctors" component={Doctors} />
         <Route path="/career" component={Career} />
@@ -48,4 +50,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
