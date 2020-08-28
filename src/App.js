@@ -12,16 +12,24 @@ import Procedures from './Procedures';
 import Contact from './Contact';
 
 function App() {
+  const procedures = [
+    "Deep Cleaning",
+    "Oral Surgery",
+    "Root Canal",
+    "Crown",
+    "Implants",
+    "Fillings"
+  ];
   return (
     <Router>
       <div className="App">
         <nav>
-          <Link to="/">Go back to Home</Link>
-          <Link to="/procedures">See our procedures</Link>
-          <Link to="/contact">Contact us</Link>
+          <Link to="/">Go back to Home</Link> {' '}
+          <Link to="/procedures">See our procedures</Link> {' '}
+          <Link to="/contact">Contact us</Link> {' '}
         </nav>
-        <Route path="/" component={Home} />
-        <Route path="/procedures" component={Procedures} />
+        <Route exact path="/" component={Home} />
+        <Route path="/procedures" render={() => <Procedures procedures={procedures} />} />
         <Route path="/contact" component={Contact} />
       </div>
     </Router>
